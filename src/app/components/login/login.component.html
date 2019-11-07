@@ -1,0 +1,14 @@
+<p>login works!</p>
+
+<div *ngIf="afAuth.auth.currentUser">
+    <pre> {{ afAuth.auth | json }}</pre>
+    <h1>Logged IN Pal!</h1>
+    <button (click)="auth.signOut()">Logout</button>
+
+</div>
+<div *ngIf="!afAuth.auth.currentUser">
+    <h1>Logged OUT Amigo!</h1>
+    <firebase-ui
+    (signInSuccessWithAuthResult)="successCallback($event)"
+    (signInFailure)="errorCallback($event)"></firebase-ui>
+</div>

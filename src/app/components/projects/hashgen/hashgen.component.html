@@ -1,0 +1,21 @@
+<h4>SJCL encryption</h4>
+<div class="container" >
+    <div class="input">
+        <div class="inputitemin">
+            <textarea [(ngModel)]="input" placeholder="Enter text here . . ."></textarea>
+        </div>
+        <div class="inputitemac">
+            Password: <input type="password" [(ngModel)]="pass">
+            <br><br>
+            <button (click)="computeHash()">Encrypt/Decrypt</button>
+        </div>
+    </div>
+    <div class="output">
+        <textarea class="outputitem" readonly>{{ message?.message }}</textarea>
+        <textarea class="outputitem" readonly>{{ message?.md5 }}</textarea>
+        <textarea class="outputitem" #encrypt readonly>{{ message?.sjcl | json }}</textarea>
+        <button (click)="copy2clip(encrypt)">Copy</button>
+        <textarea class="outputitem" #decrypt readonly>{{ message?.desjcl }}</textarea>
+        <button (click)="copy2clip(decrypt)">Copy</button>
+    </div>
+</div>
