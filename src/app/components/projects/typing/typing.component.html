@@ -1,0 +1,16 @@
+<p>typing works!</p>
+
+<div class="container">
+    <div class="output">
+
+        <textarea class="outputitem" style="background:#e2dedd">{{ blindText }}</textarea> <!-- readonly -->
+        <textarea class="outputitem"  [(ngModel)]="input"></textarea> <!-- maxlength="20" -->
+        <button (click)="showResults()">Submit</button>
+    </div>
+</div>
+    <div >
+       <!-- <pre class="result" [innerHtml]="sanitizer.bypassSecurityTrustHtml(liveView(input))"></pre>-->
+
+        
+         <pre class="result" [innerHtml]="sanitizer.bypassSecurityTrustHtml(htmlToAdd)"></pre>
+    </div>

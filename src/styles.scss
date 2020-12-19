@@ -1,4 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~firebaseui/dist/firebaseui.css';
-html, body { height: 100%; }
-body { margin: 0; font-family: monospace, Roboto, "Helvetica Neue", sans-serif; }
+@import "~firebaseui/dist/firebaseui.css";
+html,
+body {
+    height: 100%;
+    background-color: #eef5db;
+    font-family: "Vollkorn", "Helvetica Neue", sans-serif;
+    font-size: 20px;
+}
+.head {
+    color: #4f6367;
+    font-size: 2rem;
+    font-family: Vollkorn SC;
+}
+pre {
+    overflow: auto;
+    font-size: 14px;
+}
+footer {
+    color: #828282;
+    padding: 2rem 0rem;
+    font-size: 18px;
+    hr {
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+}
+#container {
+    min-height: 80vh;
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 768px) {
+    /* STYLES GO HERE */
+    .container{
+        max-width: 768px;
+        margin: auto;
+    }
+    .head {
+        font-size: 3rem;
+    }
+}

@@ -22,6 +22,10 @@ import { AuthService } from './services/auth.service';
 // the plugin exposes the two libraries as well. You can use those:
 import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
 import { AuthGuard } from './guard/auth.guard';
+import { EclipseComponent } from './components/projects/eclipse/eclipse.component';
+import { ThebookComponent } from './components/projects/thebook/thebook.component';
+import { TypingComponent } from './components/projects/typing/typing.component';
+
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -50,7 +54,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
       },
       provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID
     },
-    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+    //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
     firebase.auth.GithubAuthProvider.PROVIDER_ID,
     {
       requireDisplayName: true,
@@ -61,7 +65,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   ],
   tosUrl: '<your-tos-link>',
   privacyPolicyUrl: '<your-privacyPolicyUrl-link>',
-  credentialHelper: firebaseui.auth.CredentialHelper.NONE
+  credentialHelper: firebaseui.auth.CredentialHelper.GOOGLE_YOLO
 };
 
 @NgModule({
@@ -71,7 +75,10 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     ProjectsComponent,
     HashgenComponent,
     NavComponent,
-    LoginComponent
+    LoginComponent,
+    EclipseComponent,
+    ThebookComponent,
+    TypingComponent
   ],
   imports: [
     BrowserModule,

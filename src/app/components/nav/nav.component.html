@@ -1,9 +1,53 @@
-<ul>
-    <li><a [routerLink]="['/home']">Home</a></li>
-    <li><a [routerLink]="['/projects']">Projects</a></li>
-    <ul>
-        <li><a [routerLink]="['/projects/sjcl']">SJCL Encryption</a></li>
+<!-- SmartMenus core CSS (required) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.0.2/css/sm-core-css.min.css"
+    integrity="sha512-OF2VNQxelDKPhvZMLozqRe+nZ4EVgNHgD0+Zl3MJxl0h78wC0edWEtJkbn7r4Lrf4ijDMMKu0q80dPGBqLe03Q=="
+    crossorigin="anonymous" />
+<!-- "sm-blue" menu theme (optional, you can use your own CSS, too) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.0.2/css/sm-blue/sm-blue.min.css"
+    integrity="sha512-XwZvzOiBpe09z//iyWJ5yG/jcolI73NPltA5H95o8NNO3UcV+I9jLFRTb0L2e9QwhxwpYblIi+Mn9byLVPbQJg=="
+    crossorigin="anonymous" />
+<!-- #main-menu config - instance specific stuff not covered in the theme -->
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+<!-- SmartMenus jQuery plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.0.2/jquery.smartmenus.min.js"
+    integrity="sha512-CSUXmy4S0ZDItjtZL/SuwFlkMFhBqRVtA0Wlbvx3vbGT3Z7sw1VYHlwQlmhlr7az3bslzSubg6IW5edrtdqx3Q=="
+    crossorigin="anonymous"></script>
+<!-- SmartMenus jQuery init -->
+<script type="text/javascript">
+    $(function () {
+        $('#main-menu').smartmenus({
+            subMenusSubOffsetX: 1,
+            subMenusSubOffsetY: -8
+        });
+    });
+</script>
+
+
+<span class="head">Online Tools</span>
+<nav id="main-nav">
+    <ul id="main-menu" class="sm  sm-blue">
+        <li><a [routerLink]="['/home']">Home</a></li>
+        <li><a [routerLink]="['/projects']">Projects</a>
+            <ul class="dropdown-menu wide-dropdown-menu-maya">
+                <li><a [routerLink]="['/projects/sjcl']">SJCL Encryption</a></li>
+                <li><a [routerLink]="['/projects/eclipse']">Eclipse</a></li>
+            </ul>
+        </li>
+        <li><a [routerLink]="['/login']">Account</a></li>
     </ul>
-    <li><a [routerLink]="['/login']">Login</a></li>
-</ul>
-<ng-content></ng-content>
+</nav>
+<div id="container">
+    <ng-content></ng-content>
+</div>
+<footer>
+    <hr>
+    <div class="inFooter">
+        Sizil Krishna<br>
+        Copyright &#169; 2019 - 2020<br>
+        Powered by <a href="https://angularjs.org/" target="_blank">Angular</a>
+    </div>
+</footer>

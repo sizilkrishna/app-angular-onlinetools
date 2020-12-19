@@ -1,4 +1,24 @@
 <h4>SJCL encryption</h4>
+
+<p>The Stanford Javascript Crypto Library (hosted here on GitHub) is a project by the Stanford Computer Security Lab to build a secure, powerful, fast, small, easy-to-use, cross-browser library for cryptography in Javascript.</p>
+<p>SJCL was written by Emily Stark, Mike Hamburg and Dan Boneh at Stanford University. Special thanks to Aldo Cortesi and Roy Nicholson for reporting bugs in earlier versions of SJCL. A whitepaper on SJCL (also by Emily Stark, Mike Hamburg and Dan Boneh) was published in the 2009 Annual Computer Security Applications Conference.</p>
+
+Results are formatted as following,
+
+<pre>
+    &#123;
+        "iv":"tjp81jkAzUpW1bI9gLDDpg==", // iv Base64 encoded
+        "v":1,                           // version
+        "iter":1000,                     // iteration count
+        "ks":128,                        // key size in bits
+        "ts":64,                         // authentication strength
+        "mode":"ccm",                    // mode
+        "adata":"xxx",                   // authenticated data
+        "cipher":"aes",                  // cipher
+        "salt":"lx06UoJDNys=",           // key derivation salt
+        "ct":"Gv7ptKdTtUz6AGtX"          // ciphet text
+    &#125;
+</pre>
 <div class="container" >
     <div class="input">
         <div class="inputitemin">
@@ -19,3 +39,4 @@
         <button (click)="copy2clip(decrypt)">Copy</button>
     </div>
 </div>
+
